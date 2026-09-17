@@ -2,7 +2,6 @@ public class Item {
     private Produto produto;
     private double quantidade;
     private double valortotal;
-    private double total;
 
     public Item(Produto produto, double quantidade, double valortotal) {
         produto = this.produto;
@@ -10,9 +9,9 @@ public class Item {
         valortotal = 0;
     }
 
-    double calcularTotal() {
-        this.total = getQuantidade() * getProduto().getPreco();
-        return total;
+    double getValorTotal() {
+        this.valortotal = getQuantidade() * getProduto().getPreco();
+        return valortotal;
 
     }
 

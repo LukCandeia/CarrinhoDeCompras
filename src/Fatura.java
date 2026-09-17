@@ -1,20 +1,29 @@
 import java.util.*;
 
 public class Fatura {
-    ArrayList<Produto> listProdutos;
+    ArrayList<Item> listItem;
     double totalfatura;
 
-    public Fatura(ArrayList<Produto> listProdutos, double totalfatura) {
-        this.listProdutos = new ArrayList<>();
+    public Fatura(ArrayList<Item> listItem, double totalfatura) {
+        this.listItem = new ArrayList<>();
         this.totalfatura = totalfatura;
     }
 
-    public ArrayList<Produto> getListProdutos() {
-        return listProdutos;
+    public double calcularTotalFatura() {
+        double soma = 0.0;
+        for (Item i : listItem) {
+            soma = i.getValorTotal();
+        }
+        this.totalfatura = soma;
+        return this.totalfatura;
     }
 
-    public void setListProdutos(ArrayList<Produto> listProdutos) {
-        this.listProdutos = listProdutos;
+    public ArrayList<Item> getListItem() {
+        return listItem;
+    }
+
+    public void setListItem(ArrayList<Item> listItem) {
+        this.listItem = listItem;
     }
 
     public double getTotalfatura() {
